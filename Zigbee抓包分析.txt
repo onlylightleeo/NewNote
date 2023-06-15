@@ -1,0 +1,41 @@
+1.Beacon request  由设备发出，请求入网，设备一般会全信道发出
+
+2.Beacon 由网关发出，查看网关是否允许入网
+
+3.association request 关联请求入网，由设备发出，此时设备还未分配短地址，在MAC层显示的是长地址
+
+4.ACknowledgement 协调器进行MAC层确认
+
+5.data request 收到Coordinator的MAC层确认后，Endpoint发送一个Data request请求Coordinator分配网络地址。
+
+6.协调器进行确认
+
+6.association response 可以查看给设备分配的短地址（当Coordinator接受到Data request后经过NWK的算法后分配一个唯一的短地址，然后向Endpoint发送一个包含短地址的包）
+
+7.协调器进行确认
+
+8.Coordinator传输key给Endpoint
+
+9.协调器确认
+
+10.Devoce announce 一般为设备广播两次，网关广播两次。此时设备已经入网，但是网关还没有识别是什么设备。设备发送携带设备类型和供电类型等信息。
+
+11.协调器确认
+
+12.basic：read attributes
+网关请求设备的basic cluster相关信息
+
+13.basic:read attributes response
+设备回应，告诉网关该设备的basic cluster相关信息。
+
+ZCL：ZigBee Cluster Library（API层）
+可以理解为在ZigBee在开发一些特性功能的cluster时所用的一些库
+
+ZDP：ZigBee Device Profile
+描述了ZD0如何实现普通ZigBee设备的特性，它定义了设备描述和簇。
+
+
+API（应用层）：实现了所有ZDP定义的命令和回应所需要的函数。
+
+
+
